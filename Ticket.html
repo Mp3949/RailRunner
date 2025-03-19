@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="ticket.css">
+    <!-- <link rel="stylesheet" href="nav.css"> -->
+    <title>RailRunner - Book Ticket</title>
+    <link rel="icon" type="image/x-icon" href="ico.png">
+    <script src="auth.js" type="module"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>RailRunner</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link">Home</a></li>
+                    <li><a href="Ticket.html" class="link active">Book Tickets</a></li>
+                    <li><a href="about.html" class="link">About</a></li>
+                    <li><a href="contact.html" class="link">Contact Us</a></li>
+                    <li><a href="feedback.html" class="link">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="nav-button" id="authButtons">
+                <button class="btn white-btn" id="loginBtn">
+                    <a href="index.html" onclick="showlogin()" style="text-decoration: none; color: black;">Sign In</a>
+                </button>
+                <button class="btn" id="registerBtn">
+                    <a href="index.html" onclick="showregister()" style="text-decoration: none; color: black;">Sign
+                        Up</a>
+                </button>
+                <!-- <button class="btn" id="logoutBtn" style="display: none;">Logout</button> -->
+            </div>
+            <div class="nav-menu-btn" id="menuToggle">
+                <i class="bx bx-menu"></i>
+            </div>
+        </nav>
+
+        <div class="form-box_ticket">
+            <div class="login-container_ticket" id="login">
+                <div class="top">
+                    <h1>Search for Trains</h1>
+                </div>
+                <div class="input-box_ticket">
+                    <input type="text" class="input-field_ticket" id="From" placeholder="From"
+                        oninput="suggestStations('From')">
+                    <i class="bx bxs-location-plus"></i>
+                    <div class="suggestions" id="from-suggestions"></div>
+                    <div id="from-error" class="error-message"></div>
+                </div>
+                <div class="input-box_ticket">
+                    <input type="text" class="input-field_ticket" placeholder="To" id="To"
+                        oninput="suggestStations('To')">
+                    <i class="bx bxs-location-plus"></i>
+                    <div class="suggestions" id="to-suggestions"></div>
+                    <div id="to-error" class="error-message"></div>
+                </div>
+                <div class="input-box_ticket">
+                    <input type="date" class="input-field_ticket" placeholder="Date" id="Date">
+                    <i class="bx bxs-calendar"></i>
+                </div>
+                <div class="input-box_ticket">
+                    <button type="submit" class="submit_ticket" id="SearchtrainSubmitBtn">Search Trains</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="train-results" class="hiddentable">
+            <h1>Available Trains</h1>
+            <div id="train-cards-container">
+                <!-- Train cards will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+    </script>
+    <script src="Ticket.js"></script>
+    <script src="nav.js" type="module"></script>
+</body>
+
+</html>

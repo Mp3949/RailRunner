@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="ticket.css">
+    <link rel="stylesheet" href="contact.css">
+    <title>RailRunner-Contact_Us</title>
+    <link rel="icon" type="image/x-icon" href="ico.png">
+    <style>
+    </style>
+    <script src="auth.js" type="module"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>RailRunner</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link">Home</a></li>
+                    <li><a href="Ticket.html" class="link">Book Tickets</a></li>
+                    <li><a href="about.html" class="link">About</a></li>
+                    <li><a href="contact.html" class="link active">contact-Us</a></li>
+                    <li><a href="feedback.html" class="link">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="nav-button" id="navButton">
+                <button class="btn white-btn" id="loginBtn"><a href="index.html" onclick="showlogin()"
+                        style="text-decoration: none; color: black;">Sign In</a></button>
+                <button class="btn" id="registerBtn"><a href="index.html" onclick="showregister()"
+                        style="text-decoration: none; color: black;">Sign Up</a></button>
+                <!-- <button class="btn" id="logoutBtn" style="text-decoration: none; color: black; display: none;">Logout</button> -->
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+        <hr>
+
+
+
+        <header>
+            <div class="header-container">
+                <img src="2912020.webp" alt="contact.jpg">
+                <h1>Contact Us</h1>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="left-content">
+                <div class="container">
+                    <h2>How Can We Assist You?</h2>
+                    <p>At RailRunner, we're dedicated to supporting you with any questions or issues you may have.
+                        Whether you're a traveler needing help with our train search tool or a prospective sponsor
+                        interested in collaboration opportunities, we're here and ready to listen.</p>
+                    <br>
+                    <p>Please don't hesitate to contact us using our convenient contact form. We aim to respond promptly
+                        and provide the best possible assistance to resolve your inquiries or address any concerns you
+                        may have.</p>
+                </div>
+            </section>
+
+            <section class="right-form">
+                <div class="container">
+                    <form action="#" id="form" method="POST">
+                        <h2>Get In Touch</h2>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button id="contactbtn" type="submit" value="S">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- <footer>
+            <div class="container">
+                <p>&copy; 2024 Your Company. All rights reserved.</p>
+            </div>
+        </footer> -->
+    </div>
+
+
+
+    <script>
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+
+    </script>
+    <script type="module" src="nav.js"></script>
+    <script src="contact.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        emailjs.init('WYheWmhKfr7haX2ag')
+    </script>
+</body>
+
+</html>

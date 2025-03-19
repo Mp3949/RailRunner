@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <title>RailRunner - Login or Signup</title>
+    <link rel="icon" type="image/x-icon" href="ico.png">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>RailRunner</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link active">Home</a></li>
+                    <li><a href="Ticket.html" class="link">Book Tickets</a></li>
+                    <li><a href="about.html" class="link">About</a></li>
+                    <li><a href="contact.html" class="link">Contact Us</a></li>
+                    <li><a href="feedback.html" class="link">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="showlogin()">Sign In</button>
+                <button class="btn" id="registerBtn" onclick="showregister()">Sign Up</button>
+                <button class="btn" id="logoutBtn" style="display: none;">Logout</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+        <!-- Main Content Div (Hero Section + Form Box) -->
+        <div class="main-content">
+            <div class="hero-section">
+                <h1>Welcome to RailRunner</h1>
+                <p>Your journey starts here. Book your train tickets with ease and enjoy the ride.</p>
+                <a href="Ticket.html" class="btn hero-btn">Book Now</a>
+            </div>
+
+            <div class="form-box">
+                <div class="login-container" id="login">
+                    <div class="top">
+                        <span>Don't have an account? <a href="#" onclick="showregister()">Sign Up</a></span>
+                        <header>Login</header>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" class="input-field" id="Emaillogin" placeholder="Email" required>
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Password" id="Passwordlogin" required>
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <button type="submit" class="submit" id="loginSubmitBtn">Sign In</button>
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="login-check">
+                            <label for="login-check"> Remember Me</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#" id="Forgotpassword">Forgot password?</a></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="register-container" id="register">
+                    <div class="top">
+                        <span>Have an account? <a href="#" onclick="showlogin()">Login</a></span>
+                        <header>Sign Up</header>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="Username" placeholder="Username" required>
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" class="input-field" id="Email" placeholder="Email" required>
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" id="Password" placeholder="Password" required>
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <button type="submit" class="submit" id="registerSubmitBtn">Register</button>
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="register-check">
+                            <label for="register-check"> Remember Me</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Terms & conditions</a></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tourist Places Section -->
+        <div class="places-section">
+            <h1>Explore Popular Tourist Destinations</h1>
+            <div class="places-container">
+                <div class="place-card">
+                    <img src="Images/Taj_Mahal_(Edited).jpeg.webp" alt="Taj Mahal">
+                    <h3>Taj Mahal</h3>
+                    <p>The Taj Mahal is an iconic symbol of love and one of the Seven Wonders of the World.</p>
+                    <a href="https://en.wikipedia.org/wiki/Taj_Mahal" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/images_enhanced.jpg" alt="Jaipur">
+                    <h3>Jaipur</h3>
+                    <p>Known as the Pink City, Jaipur is famous for its historic forts and vibrant culture.</p>
+                    <a href="https://en.wikipedia.org/wiki/Jaipur" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="./Images/download_enhanced.jpg" alt="Goa">
+                    <h3>Goa</h3>
+                    <p>Goa is a tropical paradise known for its beaches, nightlife, and Portuguese heritage.</p>
+                    <a href="https://en.wikipedia.org/wiki/Goa" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/download (1).jpg" alt="Kerala">
+                    <h3>Kerala</h3>
+                    <p>Kerala, also known as "God's Own Country," is famous for its backwaters and lush greenery.</p>
+                    <a href="https://en.wikipedia.org/wiki/Kerala" class="btn">Learn More</a>
+                </div>
+                <!-- Additional Tourist Places -->
+                <div class="place-card">
+                    <img src="Images/varansi.jpg" alt="Varanasi">
+                    <h3>Varanasi</h3>
+                    <p>Varanasi, one of the oldest living cities in the world, is famous for its ghats and spiritual significance.</p>
+                    <a href="https://en.wikipedia.org/wiki/Varanasi" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/One-day-in-Udaipur-Itinerary-2.webp" alt="Udaipur">
+                    <h3>Udaipur</h3>
+                    <p>Udaipur, the City of Lakes, is known for its stunning palaces, lakes, and romantic ambiance.</p>
+                    <a href="https://en.wikipedia.org/wiki/Udaipur" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/One-day-in-Darjeeling-itinerary-2.webp" alt="Darjeeling">
+                    <h3>Darjeeling</h3>
+                    <p>Darjeeling, nestled in the Himalayas, is famous for its tea plantations and breathtaking views.</p>
+                    <a href="https://en.wikipedia.org/wiki/Darjeeling" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/amritsar.jpg" alt="Amritsar">
+                    <h3>Amritsar</h3>
+                    <p>Amritsar is home to the Golden Temple, a spiritual and cultural hub for Sikhs worldwide.</p>
+                    <a href="https://en.wikipedia.org/wiki/Amritsar" class="btn">Learn More</a>
+                </div>
+                <!-- Additional Tourist Places -->
+                <div class="place-card">
+                    <img src="Images/leh.jpg" alt="Leh-Ladakh">
+                    <h3>Leh-Ladakh</h3>
+                    <p>Leh-Ladakh is known for its stunning landscapes, Buddhist monasteries, and adventurous roads.</p>
+                    <a href="https://en.wikipedia.org/wiki/Ladakh" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/ajanta-ellora.jpg" alt="Ajanta & Ellora Caves">
+                    <h3>Ajanta & Ellora Caves</h3>
+                    <p>These UNESCO World Heritage Sites are famous for their ancient rock-cut caves and intricate carvings.</p>
+                    <a href="https://en.wikipedia.org/wiki/Ajanta_Caves" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/mysore.jpg" alt="Mysore Palace">
+                    <h3>Mysore Palace</h3>
+                    <p>Mysore Palace is a historical palace known for its grandeur and architectural beauty.</p>
+                    <a href="https://en.wikipedia.org/wiki/Mysore_Palace" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/khju.jpg" alt="Khajuraho">
+                    <h3>Khajuraho</h3>
+                    <p>Khajuraho is famous for its group of temples with exquisite sculptures and erotic art.</p>
+                    <a href="https://en.wikipedia.org/wiki/Khajuraho" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/rishi.jpg" alt="Rishikesh">
+                    <h3>Rishikesh</h3>
+                    <p>Rishikesh, the Yoga Capital of the World, is known for its spiritual retreats and adventure sports.</p>
+                    <a href="https://en.wikipedia.org/wiki/Rishikesh" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/hampi.jpg" alt="Hampi">
+                    <h3>Hampi</h3>
+                    <p>Hampi is a UNESCO World Heritage Site known for its ruins of the Vijayanagara Empire.</p>
+                    <a href="https://en.wikipedia.org/wiki/Hampi" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/andm.jpg" alt="Andaman and Nicobar Islands">
+                    <h3>Andaman and Nicobar Islands</h3>
+                    <p>These islands are known for their pristine beaches, coral reefs, and water sports.</p>
+                    <a href="https://en.wikipedia.org/wiki/Andaman_and_Nicobar_Islands" class="btn">Learn More</a>
+                </div>
+                <div class="place-card">
+                    <img src="Images/shimla.jpg" alt="Shimla">
+                    <h3>Shimla</h3>
+                    <p>Shimla, the Queen of Hills, is famous for its colonial architecture and scenic beauty.</p>
+                    <a href="https://en.wikipedia.org/wiki/Shimla" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 RailRunner. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+
+        function showlogin() {
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            x.style.left = "4px";
+            y.style.right = "-520px";
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+
+        function showregister() {
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+    </script>
+    <script src="script.js" type="module"></script>
+    <script src="nav.js" type="module"></script>
+</body>
+
+</html>

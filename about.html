@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="ticket.css">
+    <link rel="stylesheet" href="about.css">
+    <title>RailRunner-About_us</title>
+    <link rel="icon" type="image/x-icon" href="ico.png">
+    <style>
+    </style>
+    <!-- <script src="auth.js" type="module"></script> -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>RailRunner</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link">Home</a></li>
+                    <li><a href="Ticket.html" class="link">Book Tickets</a></li>
+                    <li><a href="about.html" class="link active">About</a></li>
+                    <li><a href="contact.html" class="link">contact-Us</a></li>
+                    <li><a href="feedback.html" class="link">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="nav-button" id="navButton">
+                <button class="btn white-btn" id="loginBtn"><a href="index.html" onclick="showlogin()"
+                        style="text-decoration: none; color: black;">Sign In</a></button>
+                <button class="btn" id="registerBtn"><a href="index.html" onclick="showregister()"
+                        style="text-decoration: none; color: black;">Sign Up</a></button>
+                <!-- <button class="btn" id="logoutBtn" style="text-decoration: none; color: black; display: none;">Logout</button> -->
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+        <hr>
+        <div class="container">
+            <div class="left-column">
+                <!-- <h1>About Us</h1> -->
+                <img src="about.jpg" alt="About Us" class="responsive-img">
+            </div>
+            <div class="right-column">
+                <p class="para">Welcome to RailRunner, your go-to resource for train travel enthusiasts! Our platform is
+                    designed to provide a seamless and enjoyable experience for those who love exploring new
+                    destinations by train.</p>
+                <p class="para">Understanding the importance of efficient travel planning, especially for train
+                    journeys, we've created a comprehensive search engine. This tool allows you to find train routes and
+                    schedules between any two stations across the country, and discover tourist spots along your route.
+                </p>
+                <p class="para">Our dedicated team of developers, designers, and travel experts has crafted a
+                    user-friendly platform that meets the needs of all travelers, from college students to seasoned
+                    explorers. We are committed to providing reliable and up-to-date information to ensure you have all
+                    the details you need for your train travels.</p>
+                <p class="para">At RailRunner, our passion for train travel drives us to share this enthusiasm with you.
+                    Whether you're embarking on a new adventure or planning a convenient trip, we're here to assist you
+                    every step of the way.</p>
+                <p class="para">Thank you for choosing RailRunner for your train travel needs. We wish you a wonderful
+                    journey!</p>
+            </div>
+        </div>
+
+
+        <!-- <footer>
+            <div class="container">
+                <p>&copy; 2024 Your Company. All rights reserved.</p>
+            </div>
+        </footer> -->
+    </div>
+
+
+
+    <script>
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+
+    </script>
+    <script type="module" src="nav.js"></script>
+</body>
+
+</html>

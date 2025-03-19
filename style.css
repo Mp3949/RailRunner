@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url("Images/people-watching-as-train-approaches.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* overflow: hidden; */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    /* Stack children vertically */
+    align-items: center;
+    /* Center content horizontally */
+    /* min-height: 110vh; */
+    background: rgb(0 3 6 / 68%);
+    /* #143D60 with 40% opacity */
+    padding-top: 100px;
+    /* Add padding to avoid overlap with navbar */
+}
+
+/* Navbar Styles */
+.nav {
+    position: fixed;
+    /* Fix navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 61, 96, 0.8);
+    /* Semi-transparent background */
+    z-index: 1000;
+    /* Ensure navbar is above other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-logo p {
+    color: rgb(235 91 0);
+    /* RailRunner logo color */
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    /* Navbar link color */
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.link:hover,
+.active {
+    border-bottom: 2px solid rgb(235, 91, 0);
+    /* Highlight active link */
+}
+
+.nav-button .btn {
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgb(235 91 0);
+    /* Button background */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn.white-btn {
+    background: rgb(235 91 0);
+    /* White button style */
+}
+
+.btn.white-btn:hover {
+    background-color: #A0C878;
+    /* Hover effect */
+}
+
+.nav-menu-btn {
+    display: none;
+    /* Hide menu button by default */
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    /* Text color */
+    margin-top: 50px;
+    /* Add margin to avoid overlap */
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    background: rgb(235, 91, 0);
+    /* Button background */
+    color: rgb(255, 255, 255);
+    /* Button text color */
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #A0C878;
+    /* Hover effect */
+}
+
+/* Form Box */
+.form-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 512px;
+    height: 450px;
+    overflow: hidden;
+    z-index: 2;
+    margin-top: 20px;
+    /* Add margin to separate from hero-section */
+}
+
+.input-field::placeholder {
+    color: black;
+    /* Placeholder text color */
+    opacity: 1;
+    /* Ensure full visibility */
+}
+
+.login-container,
+.register-container {
+    position: absolute;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+
+.login-container {
+    left: 4px;
+}
+
+.register-container {
+    right: -520px;
+}
+
+.top span {
+    color: rgb(255 255 255);
+    font-size: medium;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.top span a {
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    /* Link color */
+    margin-left: 5px;
+}
+
+header {
+    color: rgb(255, 255, 255);
+    /* Header text color */
+    font-size: 34px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+.input-field {
+    font-size: 15px;
+    background: rgb(255, 255, 255);
+    /* Input background */
+    color: rgb(0, 0, 0);
+    /* Input text color */
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+
+.input-field:hover,
+.input-field:focus {
+    background-color: #A0C878;
+    /* Hover/focus effect */
+    color: rgb(0, 0, 0);
+}
+
+::-webkit-input-placeholder {
+    color: rgb(255, 255, 255);
+    /* Placeholder text color */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    /* Stack children vertically */
+    align-items: center;
+    /* Center content horizontally */
+}
+
+.input-box i {
+    position: relative;
+    top: -35px;
+    left: 17px;
+    color: rgb(0, 0, 0);
+    /* Icon color */
+}
+
+.submit {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    /* Button text color */
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgb(235, 91, 0);
+    /* Button background */
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.submit:hover {
+    background-color: #A0C878;
+    /* Hover effect */
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+    /* Text color */
+    font-size: small;
+    margin-top: 10px;
+}
+
+.two-col .one {
+    display: flex;
+    gap: 5px;
+}
+
+.two label a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    /* Link color */
+}
+
+.two label a:hover {
+    text-decoration: underline;
+    /* Hover effect */
+}
+
+/* Footer */
+.footer {
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(20, 60, 96, 0.792);
+    /* Footer background */
+    color: rgb(221, 235, 157);
+    /* Footer text color */
+    padding: 10px 0;
+}
+
+/* Tourist Places Section */
+.places-section {
+    padding: 40px 20px;
+    background-color: #00000000;
+    text-align: center;
+    width: 100%;
+    /* Full width */
+    margin-top: 20px;
+    /* Add margin to separate from form-box */
+}
+
+.places-section h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #eb5b00;
+    background-color: #133859;
+    height: min-content;
+    border-radius: 10px;
+    /* width: max-content; */
+}
+
+.places-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.place-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    padding: 20px;
+    text-align: center;
+}
+
+.place-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.place-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #143D60;
+}
+
+.place-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.place-card .btn {
+    background-color: #eb5b00;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.place-card .btn:hover {
+    background-color: #ff8538;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 540px) {
+    .wrapper {
+        min-height: 100vh;
+    }
+
+    .form-box {
+        width: 100%;
+        height: 500px;
+    }
+
+    .register-container,
+    .login-container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .register-container .two-forms {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .places-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 1230px) {
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        /* Stack children vertically */
+        align-items: center;
+        /* Center content horizontally */
+    }
+}

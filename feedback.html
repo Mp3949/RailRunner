@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="ticket.css">
+    <link rel="stylesheet" href="feedback.css">
+    <title>ReiRunner - Feedback</title>
+    <link rel="icon" type="image/x-icon" href="ico.png">
+    <script src="auth.js" type="module"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>ReiRunner</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link">Home</a></li>
+                    <li><a href="Ticket.html" class="link">Book Tickets</a></li>
+                    <li><a href="about.html" class="link">About</a></li>
+                    <li><a href="contact.html" class="link">Contact Us</a></li>
+                    <li><a href="feedback.html" class="link active">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="nav-button" id="navButton">
+                <button class="btn white-btn" id="loginBtn"><a href="index.html" onclick="showlogin()"
+                        style="text-decoration: none; color: black;">Sign In</a></button>
+                <button class="btn" id="registerBtn"><a href="index.html" onclick="showregister()"
+                        style="text-decoration: none; color: black;">Sign Up</a></button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+        <hr>
+
+        <div class="container">
+            <div class="left-column">
+                <h1>Feedback</h1>
+                <p class="para">
+                    Thank you for visiting ReiRunner, a website that helps you search for trains between stations and
+                    tourist places based on your destination. As the creator of this website, I am thrilled to know that
+                    you find it useful for your queries and potential sponsorships.
+                </p>
+                <p class="para">
+                    We strive to provide our users with the most accurate and up-to-date information about train
+                    schedules and tourist destinations, so they can plan their trips with ease. Our website is
+                    user-friendly and accessible to people of all ages and backgrounds, and we are constantly working to
+                    improve it based on user feedback.
+                </p>
+                <p class="para">
+                    We appreciate your support and feedback, as it helps us to make ReiRunner even better. If you
+                    have any suggestions or feedback, please feel free to contact us through our website.
+                </p>
+                <p class="para">
+                    Thank you for choosing ReiRunner, and we hope to see you again soon.
+                </p>
+            </div>
+            <div class="right-column">
+                <h1>Feedback Form</h1>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button id="feedbtn" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add form submission handling here
+            alert('Thank you for your feedback!');
+        });
+    </script>
+    <script type="module" src="nav.js"></script>
+    <script src="feedback.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('WYheWmhKfr7haX2ag');
+    </script>
+</body>
+
+</html>
