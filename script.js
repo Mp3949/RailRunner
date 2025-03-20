@@ -36,8 +36,10 @@ onAuthStateChanged(auth, (user) => {
 
         const heroSection = document.querySelector('.hero-section');
         if (heroSection) {
+            // Extract the part of the email before the '@' symbol
+            const username = user.email.split('@')[0];
             heroSection.innerHTML = `
-                <h1>Welcome, ${user.email}!</h1>
+                <h1>Welcome, ${username}!</h1>
                 <p>You are now logged in. Enjoy your journey with RailRunner.</p>
                 <a href="Ticket.html" class="btn hero-btn">Book Now</a>
             `;
