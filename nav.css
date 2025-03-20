@@ -100,7 +100,8 @@
     }
 
     .nav-menu.active {
-        top: 100px; /* Show menu when active */
+        top: 70px; /* Show menu when active */
+        line-height: 40px;
     }
 
     .nav-menu ul {
