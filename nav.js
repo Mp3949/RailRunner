@@ -52,8 +52,25 @@ onAuthStateChanged(auth, (user) => {
     updateUI(user);
 });
 
-// Add this script to your existing JavaScript file or in a <script> tag in your HTML
-document.getElementById('menuToggle').addEventListener('click', function () {
-    const navMenu = document.getElementById('navMenu');
-    navMenu.classList.toggle('responsive');
-});
+function myMenuFunction() {
+    var navMenu = document.getElementById("navMenu");
+    navMenu.classList.toggle("active");
+}
+
+function showlogin() {
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    x.style.left = "4px";
+    y.style.right = "-520px";
+    x.style.opacity = 1;
+    y.style.opacity = 0;
+}
+
+function showregister() {
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    x.style.left = "-510px";
+    y.style.right = "5px";
+    x.style.opacity = 0;
+    y.style.opacity = 1;
+}

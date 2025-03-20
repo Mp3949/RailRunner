@@ -28,80 +28,6 @@ body {
     /* Add padding to avoid overlap with navbar */
 }
 
-/* Navbar Styles */
-.nav {
-    position: fixed;
-    /* Fix navbar at the top */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(20, 61, 96, 0.8);
-    /* Semi-transparent background */
-    z-index: 1000;
-    /* Ensure navbar is above other content */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.nav-logo p {
-    color: rgb(235 91 0);
-    /* RailRunner logo color */
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.nav-menu ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu ul li .link {
-    text-decoration: none;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    /* Navbar link color */
-    padding-bottom: 15px;
-    margin: 0 25px;
-}
-
-.link:hover,
-.active {
-    border-bottom: 2px solid rgb(235, 91, 0);
-    /* Highlight active link */
-}
-
-.nav-button .btn {
-    width: 130px;
-    height: 40px;
-    font-weight: 500;
-    background: rgb(235 91 0);
-    /* Button background */
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.btn.white-btn {
-    background: rgb(235 91 0);
-    /* White button style */
-}
-
-.btn.white-btn:hover {
-    background-color: #A0C878;
-    /* Hover effect */
-}
-
-.nav-menu-btn {
-    display: none;
-    /* Hide menu button by default */
-    cursor: pointer;
-}
-
 /* Hero Section */
 .hero-section {
     text-align: center;
@@ -337,11 +263,36 @@ header {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    width: 30%;
     padding: 20px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
+@media only screen and (max-width: 768px) {
+    .place-card {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .place-card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .place-card h3 {
+        font-size: 18px;
+    }
+
+    .place-card p {
+        font-size: 12px;
+    }
+
+    .place-card .btn {
+        padding: 8px 16px;
+    }
+}
 .place-card img {
     width: 100%;
     border-radius: 10px;
@@ -399,6 +350,7 @@ header {
         flex-direction: column;
         align-items: center;
     }
+
 }
 
 @media only screen and (max-width: 1230px) {
@@ -410,3 +362,4 @@ header {
         /* Center content horizontally */
     }
 }
+

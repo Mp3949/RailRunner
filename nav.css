@@ -1,25 +1,37 @@
+/* Navbar Styles */
 .nav {
-    /* position: fixed; */
+    position: fixed;
     top: 0;
-    display: flex;
-    justify-content: space-around;
+    left: 0;
     width: 100%;
     height: 100px;
     line-height: 100px;
-    background: rgba(20, 61, 96, 0.9); /* #143D60 with 60% opacity */
-    z-index: 100;
+    background: rgba(20, 61, 96, 0.9); /* #143D60 with 90% opacity */
+    z-index: 1000; /* Ensure navbar is above other content */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
 }
+
+/* Navbar Logo */
 .nav-logo p {
     color: rgb(235 91 0); /* #EB5B00 */
     font-size: 25px;
     font-weight: 600;
+    margin: 0; /* Remove default margin */
 }
+
+/* Navbar Menu */
 .nav-menu ul {
     display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-menu ul li {
-    list-style-type: none;
+    margin: 0 25px;
 }
 
 .nav-menu ul li .link {
@@ -27,27 +39,68 @@
     font-weight: 500;
     color: rgb(255, 255, 255);
     padding-bottom: 15px;
-    margin: 0 25px;
 }
 
-.link:hover, .active {
+.link:hover,
+.active {
     border-bottom: 2px solid rgb(235, 91, 0); /* #EB5B00 */
 }
+
+/* Navbar Button */
+.nav-button .btn {
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgb(235 91 0); /* #EB5B00 */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    color: rgb(255, 255, 255); /* Button text color */
+}
+
+.btn.white-btn:hover {
+    background-color: #A0C878; /* Hover effect */
+}
+
+/* Navbar Menu Button (for mobile) */
+.nav-menu-btn {
+    display: none; /* Hide menu button by default */
+    cursor: pointer;
+}
+
+.nav-menu-btn i {
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    background: rgba(221, 235, 157, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+/* Responsive Design for Navbar */
 @media only screen and (max-width: 1060px) {
     .nav-button {
-        display: none;
+        display: none; /* Hide button on smaller screens */
     }
 
     .nav-menu {
         position: absolute;
-        top: -800px;
+        top: -800px; /* Hide menu off-screen by default */
+        left: 0;
         display: flex;
         justify-content: center;
+        align-items: center;
         background: rgba(20, 61, 96, 0.9);
         width: 100%;
         height: 90vh;
         backdrop-filter: blur(20px);
-        transition: .8s;
+        transition: 0.8s;
+    }
+
+    .nav-menu.active {
+        top: 100px; /* Show menu when active */
     }
 
     .nav-menu ul {
@@ -55,17 +108,11 @@
         text-align: center;
     }
 
-    .nav-menu-btn {
-        display: block;
+    .nav-menu ul li {
+        margin: 15px 0;
     }
 
-    .nav-menu-btn i {
-        font-size: 25px;
-        color: rgb(255, 255, 255);
-        padding: 10px;
-        background: rgba(221, 235, 157, 0.2);
-        border-radius: 50%;
-        cursor: pointer;
-        transition: .8s;
+    .nav-menu-btn {
+        display: block; /* Show menu button on smaller screens */
     }
 }

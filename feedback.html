@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="ticket.css">
+    <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="feedback.css">
     <title>ReiRunner - Feedback</title>
     <link rel="icon" type="image/x-icon" href="ico.png">
@@ -16,7 +17,7 @@
     <div class="wrapper">
         <nav class="nav">
             <div class="nav-logo">
-                <p>ReiRunner</p>
+                <p>RailRunner</p>
             </div>
             <div class="nav-menu" id="navMenu">
                 <ul>
@@ -37,13 +38,12 @@
                 <i class="bx bx-menu" onclick="myMenuFunction()"></i>
             </div>
         </nav>
-        <hr>
 
         <div class="container">
             <div class="left-column">
-                <h1>Feedback</h1>
+              
                 <p class="para">
-                    Thank you for visiting ReiRunner, a website that helps you search for trains between stations and
+                    Thank you for visiting RailRunner, a website that helps you search for trains between stations and
                     tourist places based on your destination. As the creator of this website, I am thrilled to know that
                     you find it useful for your queries and potential sponsorships.
                 </p>
@@ -83,16 +83,31 @@
     </div>
 
     <script>
+
         function myMenuFunction() {
-            var i = document.getElementById("navMenu");
-            if (i.className === "nav-menu") {
-                i.className += " responsive";
-            } else {
-                i.className = "nav-menu";
-            }
+            var navMenu = document.getElementById("navMenu");
+            navMenu.classList.toggle("active");
         }
 
-        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+        function showlogin() {
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            x.style.left = "4px";
+            y.style.right = "-520px";
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+
+        function showregister() {
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+
+        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
             event.preventDefault();
             // Add form submission handling here
             alert('Thank you for your feedback!');

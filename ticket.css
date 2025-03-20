@@ -20,69 +20,6 @@ body {
     background-color: rgba(255, 255, 255, 0);
 }
 
-/* Navigation Bar */
-.nav {
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    line-height: 100px;
-    z-index: 100;
-    background: linear-gradient(rgba(20, 61, 96, 0.6), transparent); /* #143D60 */
-    padding: 0 20px;
-}
-
-.nav-logo p {
-    color: rgb(235 91 0); /* #DDEB9D */
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.nav-menu ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu ul li .link {
-    text-decoration: none;
-    font-weight: 500;
-    color: rgb(255, 255, 255); /* #DDEB9D */
-    padding-bottom: 15px;
-    margin: 0 25px;
-}
-
-.link:hover, .active {
-    border-bottom: 2px solid rgb(235, 91, 0); /* #EB5B00 */
-}
-
-.nav-button .btn {
-    width: 130px;
-    height: 40px;
-    font-weight: 500;
-    background: rgb(235 91 0); /* #DDEB9D with 40% opacity */
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-
-.btn.white-btn {
-    background: rgb(235 91 0); /* #DDEB9D with 70% opacity */
-}
-
-.btn.white-btn:hover {
-    background: rgba(221, 235, 157, 0.5); /* #DDEB9D with 50% opacity */
-}
-
-.nav-menu-btn {
-    display: none;
-    cursor: pointer;
-}
 
 /* Train Results Section */
 #train-results {
@@ -104,7 +41,7 @@ body {
     box-sizing: border-box;
     background-color: rgb(0, 0, 0); /* #A0C878 */
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 100px;
     color: rgb(255, 255, 255); /* #DDEB9D */
 }
 
@@ -245,36 +182,9 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-    .nav {
-        flex-direction: column;
-        height: auto;
-        line-height: 60px;
-    }
-
-    .nav-logo p {
-        font-size: 20px;
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-menu ul li .link {
-        margin: 0;
-    }
-
-    .nav-button {
-        flex-direction: row;
-        margin-top: 10px;
-    }
-
-    .nav-button .btn {
-        margin: 5px;
-    }
 
     .form-box_ticket {
-        margin-top: 80px;
+        margin-top: 100px;
     }
 
     .login-container_ticket .top h1 {

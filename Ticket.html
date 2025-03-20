@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="ticket.css">
-    <!-- <link rel="stylesheet" href="nav.css"> -->
+    <link rel="stylesheet" href="nav.css">
     <title>RailRunner - Book Ticket</title>
     <link rel="icon" type="image/x-icon" href="ico.png">
     <script src="auth.js" type="module"></script>
@@ -27,18 +27,13 @@
                     <li><a href="feedback.html" class="link">Feedback</a></li>
                 </ul>
             </div>
-            <div class="nav-button" id="authButtons">
-                <button class="btn white-btn" id="loginBtn">
-                    <a href="index.html" onclick="showlogin()" style="text-decoration: none; color: black;">Sign In</a>
-                </button>
-                <button class="btn" id="registerBtn">
-                    <a href="index.html" onclick="showregister()" style="text-decoration: none; color: black;">Sign
-                        Up</a>
-                </button>
-                <!-- <button class="btn" id="logoutBtn" style="display: none;">Logout</button> -->
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="showlogin()">Sign In</button>
+                <button class="btn" id="registerBtn" onclick="showregister()">Sign Up</button>
+                <button class="btn" id="logoutBtn" style="display: none;">Logout</button>
             </div>
-            <div class="nav-menu-btn" id="menuToggle">
-                <i class="bx bx-menu"></i>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
             </div>
         </nav>
 
@@ -81,12 +76,26 @@
 
     <script>
         function myMenuFunction() {
-            var i = document.getElementById("navMenu");
-            if (i.className === "nav-menu") {
-                i.className += " responsive";
-            } else {
-                i.className = "nav-menu";
-            }
+            var navMenu = document.getElementById("navMenu");
+            navMenu.classList.toggle("active");
+        }
+
+        function showlogin() {
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            x.style.left = "4px";
+            y.style.right = "-520px";
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+
+        function showregister() {
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
         }
     </script>
     <script src="Ticket.js"></script>
