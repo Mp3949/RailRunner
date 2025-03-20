@@ -1,0 +1,78 @@
+:root {
+    --primary-color: #143D60; /* Dark blue */
+    --secondary-color: #A0C878; /* Soft green */
+    --accent-color: #EB5B00; /* Bright orange */
+    --text-color: #DDEB9D; /* Light greenish-yellow */
+    --background-color: #f4f4f4; /* Light gray background */
+    --container-background: #fff; /* White container background */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    color: var(--primary-color); /* Default text color */
+}
+
+.container {
+    max-width: 800px; /* Adjusted for better readability */
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #A0C878;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2rem; /* Larger heading */
+}
+
+#trainDetails {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    /* border: 1px solid var(--primary-color); */
+}
+
+#trainDetails h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+#trainDetails p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+#seatAvailabilityResults {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    /* border: 1px solid var(--primary-color); */
+}
+
+#seatAvailabilityResults h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+#seatAvailabilityResults p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+/* Optional: Add some spacing and styling for better readability */
+#trainDetails p strong,
+#seatAvailabilityResults p strong {
+    color: var(--Primary-color);
+    font-weight: bold;
+}

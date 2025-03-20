@@ -75,6 +75,14 @@ function extractStationCode(station) {
 
 async function searchTrains(event) {
     event.preventDefault();
+    const container = document.getElementById('train-cards-container');
+    container.innerHTML = `
+        <div class="container">
+            <img src="Images/loader.gif" alt="Loading..." class="loader-gif">
+        </div>
+        <h2>Searching Trains...</h2>
+    `;
+    document.getElementById('train-results').classList.remove('hiddentable');
 
     const fromStationName = document.getElementById('From').value.trim();
     const toStationName = document.getElementById('To').value.trim();
@@ -104,18 +112,24 @@ async function searchTrains(event) {
 
     console.log(`Searching trains from ${fromStationCode} to ${toStationCode} on ${date}`);
 
-    const apiUrl = `https://irctc1.p.rapidapi.com/api/v3/trainBetweenStations?fromStationCode=${fromStationCode}&toStationCode=${toStationCode}&dateOfJourney=${date}`;
-    const options = {
+    const myHeaders = new Headers();
+    myHeaders.append("X-RapidAPI-Host", "irctc1.p.rapidapi.com");
+    myHeaders.append("X-RapidAPI-Key", "fb8dbe5110mshcf13c98485917cfp100148jsnc69d7b39758b");
+    myHeaders.append("x-apihub-key", "HzHu1xa0-X6ZFJeuJhFQnQ8Nsplj4IhNeuU4yfZe96qwbgKzMn");
+    myHeaders.append("x-apihub-host", "IRCTC.allthingsdev.co");
+    myHeaders.append("x-apihub-endpoint", "ba186358-897d-4f31-8c78-33941455b792");
+
+    const requestOptions = {
         method: 'GET',
-        headers: {
-    'x-rapidapi-key': 'd7602e564cmsh7955183ff227343p12a231jsn544f4f770a80',
-            'x-rapidapi-host': 'irctc1.p.rapidapi.com'
-        }
+        headers: myHeaders,
+        redirect: 'follow'
     };
+
+    const apiUrl = `https://IRCTC.proxy-production.allthingsdev.co/api/v3/trainBetweenStations?fromStationCode=${fromStationCode}&toStationCode=${toStationCode}&dateOfJourney=${date}`;
 
     console.log('Fetching data from API...');
     try {
-        const response = await fetch(apiUrl, options);
+        const response = await fetch(apiUrl, requestOptions);
         console.log('Response status:', response.status);
 
         if (!response.ok) {
@@ -140,9 +154,10 @@ async function searchTrains(event) {
 }
 
 function displayTrains(trains) {
+    // const trainStatusResults = document.getElementById('train-status-results');
     const container = document.getElementById('train-cards-container');
-    container.innerHTML = '';
 
+    container.innerHTML = '';
     if (!trains || trains.length === 0) {
         container.innerHTML = '<p>No trains found</p>';
         return;
@@ -157,31 +172,77 @@ function displayTrains(trains) {
             <p><strong>To:</strong> ${train.to_station_name}</p>
             <p><strong>Class:</strong> ${train.class_type}</p>
             <p><strong>Run Days:</strong> ${train.run_days}</p>
-            <button class="book-Ticket-btn" data-train-name="${train.train_name}" data-train-number="${train.train_number}" data-from-station="${train.from_station_name}" data-to-station="${train.to_station_name}" data-date="${train.train_date}" data-class-type="${train.class_type}">Book Ticket</button>
+            <button class="check-seat-availability-btn" 
+                    data-train-number="${train.train_number}" 
+                    data-from-station="${train.from_station_name}" 
+                    data-to-station="${train.to_station_name}" 
+                    data-date="${train.train_date}" 
+                    data-class-type="${train.class_type}">
+                Check Seat Availability
+            </button>
         `;
         container.appendChild(card);
     });
 
-    document.getElementById('train-results').classList.remove('hiddentable');
+    // Add event listeners to "Check Seat Availability" buttons
+    const buttons = document.querySelectorAll('.check-seat-availability-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const trainNumber = button.getAttribute('data-train-number');
+            const fromStation = button.getAttribute('data-from-station');
+            const toStation = button.getAttribute('data-to-station');
+            const date = button.getAttribute('data-date');
+            const classType = button.getAttribute('data-class-type');
+
+            if (trainNumber && fromStation && toStation && date && classType) {
+                const queryParams = new URLSearchParams({
+                    trainNumber: trainNumber,
+                    fromStation: fromStation,
+                    toStation: toStation,
+                    date: date,
+                    class: classType
+                });
+
+                const seatAvailabilityUrl = `seat_avai.html?${queryParams.toString()}`;
+                console.log('Redirecting to:', seatAvailabilityUrl);
+                window.location.href = seatAvailabilityUrl;
+            } else {
+                alert('Invalid train details. Please try again.');
+            }
+        });
+    });
+
+
 }
 
-function handleBooking(event) {
-    if (event.target && event.target.classList.contains('book-Ticket-btn')) {
+function handleSeatAvailability(event) {
+    if (event.target && event.target.classList.contains('check-seat-availability-btn')) {
+        const trainNumber = event.target.getAttribute('data-train-number');
+        const fromStation = event.target.getAttribute('data-from-station');
+        const toStation = event.target.getAttribute('data-to-station');
         const date = event.target.getAttribute('data-date');
-        const fromStationName = document.getElementById('From').value.trim();
-        const toStationName = document.getElementById('To').value.trim();
+        const classType = event.target.getAttribute('data-class-type');
 
-        if (fromStationName && toStationName && date) {
-            const bookingUrl = `https://www.confirmtkt.com/rbooking-d/trains/from/${encodeURIComponent(fromStationName)}/to/${encodeURIComponent(toStationName)}/${date}`;
-            console.log('Redirecting to:', bookingUrl);
-            window.location.href = bookingUrl;
+        if (trainNumber && fromStation && toStation && date && classType) {
+            const queryParams = new URLSearchParams({
+                trainNumber: trainNumber,
+                fromStation: fromStation,
+                toStation: toStation,
+                date: date,
+                class: classType
+            });
+
+            const seatAvailabilityUrl = `seat_avai.html?${queryParams.toString()}`;
+            console.log('Redirecting to:', seatAvailabilityUrl);
+            window.location.href = seatAvailabilityUrl;
         } else {
-            alert('Please fill in all fields.');
+            alert('Invalid train details. Please try again.');
         }
     }
 }
 
-document.addEventListener('click', handleBooking);
-document.addEventListener('touchstart', handleBooking);
+document.addEventListener('click', handleSeatAvailability);
+document.addEventListener('touchstart', handleSeatAvailability);
+
 
 document.getElementById('SearchtrainSubmitBtn').addEventListener('click', searchTrains);
