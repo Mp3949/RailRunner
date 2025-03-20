@@ -90,7 +90,8 @@ RailRunner integrates with external APIs to fetch real-time train data. Below ar
 ![image](https://github.com/user-attachments/assets/3948eb5f-2d16-4bc6-bcc1-8742b31bb969)
 
 ### Login/SignUp Page
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/3f6ecd6c-c14f-481d-91e0-3622a2293cc1)
+
 
 
 ### Train Search Results
